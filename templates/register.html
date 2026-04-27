@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register — BuddyBot</title>
+  <meta name="description" content="Create your free BuddyBot account"/>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div id="toast-container"></div>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">🤖</div>
+        <h1>BuddyBot</h1>
+        <p>Create your free account</p>
+      </div>
+
+      <form id="register-form" autocomplete="on">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <div class="input-wrapper">
+            <span class="input-icon">👤</span>
+            <input class="form-input" type="text" id="name" name="name"
+                   placeholder="Your full name" required autocomplete="name"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <div class="input-wrapper">
+            <span class="input-icon">✉️</span>
+            <input class="form-input" type="email" id="email" name="email"
+                   placeholder="you@example.com" required autocomplete="email"/>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input class="form-input" type="password" id="password" name="password"
+                   placeholder="At least 8 characters" required autocomplete="new-password"/>
+            <button type="button" class="toggle-password" title="Show/hide">👁️</button>
+          </div>
+          <div class="strength-bar"><div class="strength-fill"></div></div>
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Confirm Password</label>
+          <div class="input-wrapper">
+            <span class="input-icon">🔒</span>
+            <input class="form-input" type="password" id="confirm_password" name="confirm_password"
+                   placeholder="Re-enter password" required autocomplete="new-password"/>
+            <button type="button" class="toggle-password" title="Show/hide">👁️</button>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          <span class="btn-text">Create Account ✨</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-links">
+        Already have an account? <a href="/login">Sign in</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/static/js/three-bg.js"></script>
+  <script src="/static/js/auth.js"></script>
+</body>
+</html>

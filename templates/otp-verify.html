@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verify OTP — BuddyBot</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+</head>
+<body>
+  <canvas id="three-canvas"></canvas>
+  <div id="toast-container"></div>
+
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="logo-icon">🔢</div>
+        <h1>Verify OTP</h1>
+        <p>Enter the 6-digit code sent to your email</p>
+      </div>
+
+      <div style="text-align:center;margin-bottom:8px;font-size:0.82rem;color:var(--text-secondary);">
+        OTP expires in: <span id="otp-timer" style="color:var(--accent-3);font-weight:700;font-variant-numeric:tabular-nums;">05:00</span>
+      </div>
+
+      <form id="otp-form">
+        <div class="otp-group">
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code"/>
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1"/>
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1"/>
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1"/>
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1"/>
+          <input class="otp-input" type="text" inputmode="numeric" maxlength="1"/>
+        </div>
+        <input type="hidden" id="otp-hidden" name="otp"/>
+
+        <button type="submit" class="btn btn-primary" id="verify-btn" disabled>
+          <span class="btn-text">Verify OTP ✅</span>
+          <span class="spinner"></span>
+        </button>
+      </form>
+
+      <div class="auth-links" style="margin-top:16px;">
+        Didn't receive the code? <a href="/forgot-password">Resend OTP</a>
+      </div>
+      <div class="auth-links">
+        <a href="/login">← Back to Login</a>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/static/js/three-bg.js"></script>
+  <script src="/static/js/auth.js"></script>
+</body>
+</html>
