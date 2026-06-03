@@ -1,0 +1,221 @@
+@import "tailwindcss";
+
+/* ─── Custom fonts ─────────────────────────────────────────────────────────── */
+.font-orbitron { font-family: 'Orbitron', sans-serif; }
+.font-rajdhani { font-family: 'Rajdhani', sans-serif; }
+.font-share-tech { font-family: 'Share Tech Mono', monospace; }
+
+/* ─── Glassmorphism panel ──────────────────────────────────────────────────── */
+.glass-panel {
+  background: rgba(2, 11, 24, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ─── Scanlines ────────────────────────────────────────────────────────────── */
+.scanlines {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 255, 0.012) 2px,
+    rgba(0, 255, 255, 0.012) 4px
+  );
+  pointer-events: none;
+}
+
+/* ─── Radial vignette ──────────────────────────────────────────────────────── */
+.bg-radial-vignette {
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 10, 0.7) 100%);
+}
+
+/* ─── Scrollbar ────────────────────────────────────────────────────────────── */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 200, 255, 0.2) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 200, 255, 0.2);
+  border-radius: 2px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 200, 255, 0.4);
+}
+
+/* ─── Range sliders ────────────────────────────────────────────────────────── */
+.slider-cyan::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ffff;
+  border: 2px solid #020b18;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  cursor: pointer;
+}
+.slider-cyan::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #00ffff;
+  border: 2px solid #020b18;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.6);
+  cursor: pointer;
+}
+.slider-amber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fbbf24;
+  border: 2px solid #020b18;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+  cursor: pointer;
+}
+.slider-amber::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fbbf24;
+  border: 2px solid #020b18;
+  box-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+  cursor: pointer;
+}
+
+/* ─── Animations ───────────────────────────────────────────────────────────── */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes glitch {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 1px); }
+  40% { transform: translate(2px, -1px); }
+  60% { transform: translate(-1px, 2px); }
+  80% { transform: translate(1px, -2px); }
+}
+
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.3), 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 30px rgba(0, 255, 255, 0.3), 0 0 60px rgba(0, 255, 255, 0.1);
+  }
+}
+
+.animate-slideIn {
+  animation: slideIn 0.35s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-glitch {
+  animation: glitch 0.4s ease-in-out;
+}
+
+.animate-neon-pulse {
+  animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* ─── Glow text ─────────────────────────────────────────────────────────────── */
+.glow-text-cyan {
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+.text-purple { color: #c084fc; }
+.text-green { color: #4ade80; }
+.text-amber { color: #fbbf24; }
+
+/* ─── Button glow ───────────────────────────────────────────────────────────── */
+.btn-glow:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+/* ─── Selection ─────────────────────────────────────────────────────────────── */
+::selection {
+  background: rgba(0, 255, 255, 0.2);
+  color: white;
+}
+
+/* ─── Body base ─────────────────────────────────────────────────────────────── */
+body {
+  background-color: #020b18;
+  overflow: hidden;
+}
+
+/* ─── Neon border ────────────────────────────────────────────────────────────── */
+.border-neon-cyan {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3), inset 0 0 10px rgba(0, 229, 255, 0.05);
+}
+
+/* ─── HUD corners ────────────────────────────────────────────────────────────── */
+.hud-corner::before,
+.hud-corner::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: rgba(0, 229, 255, 0.5);
+  border-style: solid;
+}
+.hud-corner-tl::before { top: 0; left: 0; border-width: 1px 0 0 1px; }
+.hud-corner-tr::after  { top: 0; right: 0; border-width: 1px 1px 0 0; }
+
+/* ─── Holographic shimmer ────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+.holo-text {
+  background: linear-gradient(90deg, #00e5ff, #00ffcc, #0080ff, #00e5ff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ─── Matrix rain fade ────────────────────────────────────────────────────────── */
+@keyframes matrixFade {
+  0%,100% { opacity: 0.03; }
+  50%     { opacity: 0.06; }
+}
+
+/* ─── Loading bar pulse ──────────────────────────────────────────────────────── */
+@keyframes loadPulse {
+  0%   { box-shadow: 0 0 5px rgba(0,229,255,0.3); }
+  50%  { box-shadow: 0 0 20px rgba(0,229,255,0.8), 0 0 40px rgba(0,229,255,0.3); }
+  100% { box-shadow: 0 0 5px rgba(0,229,255,0.3); }
+}
+.load-pulse { animation: loadPulse 1.5s ease-in-out infinite; }
+
+/* ─── Typing cursor blink ───────────────────────────────────────────────────── */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
